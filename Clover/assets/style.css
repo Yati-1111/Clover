@@ -1,0 +1,825 @@
+/* ===========================
+   Clover App - Complete style.css
+   Ready to paste (login, signup, welcome, tasks)
+   Palette: Rojo #E4281F, Dutch White #FCEEC9, Xanthous #FFBE54
+   =========================== */
+
+/* ===========================
+   GLOBAL STYLES
+   =========================== */
+* { box-sizing: border-box; }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", serif;
+    background-color: #FCEEC9; /* Dutch White */
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ===========================
+   UTILITY HELPERS
+   =========================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===========================
+   LOGIN & SIGNUP PAGES
+   =========================== */
+.auth-wrapper {
+    min-height: calc(100vh - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+form h2 {
+    margin: 0 0 18px 0;
+    color: #E4281F;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 11px 12px;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 8px;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: rgba(228,40,31,0.8);
+    box-shadow: 0 4px 12px rgba(228,40,31,0.08);
+}
+
+form button,
+.auth-cta {
+    width: 100%;
+    padding: 12px;
+    margin-top: 14px;
+    background-color: #E4281F;
+    color: #FCEEC9;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .18s ease, transform .12s ease;
+}
+
+form button:hover,
+.auth-cta:hover {
+    background-color: #FFBE54;
+    color: #000;
+    transform: translateY(-1px);
+}
+
+.auth-note {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.auth-note a { 
+    color: #E4281F; 
+    text-decoration: none; 
+    font-weight: 600; 
+}
+
+.auth-note a:hover { 
+    text-decoration: underline; 
+}
+
+.msg {
+    color: #b00020;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* ===========================
+   HEADER (Homepage & Task Pages)
+   =========================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 18px 32px;
+    background-color: rgba(255,190,84,0.92);
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom: 18px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 18px 32px;
+    background-color: rgba(255,190,84,0.92);
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.thin-header {
+    padding: 18px 32px;
+}
+
+/* Left side of header */
+.header-left,
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.clover-logo {
+    width: 62px;
+    height: 62px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 6px;
+    display: inline-block;
+    object-fit: contain;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.clover-logo:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.app-name {
+    font-size: 30px;
+    font-weight: 800;
+    color: #E4281F;
+    font-family: "Georgia", serif;
+    letter-spacing: 0.4px;
+}
+
+/* Right side of header */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.logout-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #FCEEC9;
+    color: #E4281F;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    transition: all .18s ease;
+}
+
+.logout-btn:hover {
+    background-color: #FFBE54;
+    color: #000;
+    transform: translateY(-1px);
+}
+
+.welcome-msg,
+.welcome-message {
+    font-size: 18px;
+    color: #6B2E1F;
+    font-weight: 600;
+    font-family: "Georgia", serif;
+    margin: 0;
+    opacity: 0.98;
+}
+
+/* ===========================
+   HOMEPAGE - CATEGORY CARDS
+   =========================== */
+.cards-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 20px 40px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+    align-items: start;
+}
+
+.category-card {
+    background-color: rgba(255,255,255,0.26);
+    backdrop-filter: blur(8px);
+    border-radius: 18px;
+    padding: 22px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: transform .22s ease, box-shadow .22s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.03);
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.category-card h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #E4281F;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.card-desc {
+    font-size: 16px;
+    color: #333;
+    opacity: 0.95;
+    line-height: 1.35;
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 6px 8px;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 44px;
+    background-color: rgba(255,255,255,0.08);
+}
+
+.card-desc[contenteditable="true"]:focus {
+    outline: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border: 1px dashed rgba(228,40,31,0.35);
+}
+
+.category-card.work { border-left: 6px solid #E4281F; }
+.category-card.personal { border-left: 6px solid #FFBE54; }
+.category-card.groceries { border-left: 6px solid #E4281F; }
+.category-card.travel { border-left: 6px solid #FFBE54; }
+
+/* ===========================
+   TASK PAGE STYLES
+   =========================== */
+
+/* Circular Add Task Button */
+.circular-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background-color: #E4281F;
+    color: #FCEEC9;
+    font-size: 2.8rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(228, 40, 31, 0.35);
+    transition: all 0.3s ease;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.circular-btn:hover {
+    background-color: #FFBE54;
+    color: #000;
+    transform: scale(1.12) rotate(90deg);
+    box-shadow: 0 12px 35px rgba(255, 190, 84, 0.45);
+}
+
+.circular-btn:active {
+    transform: scale(0.95);
+}
+
+/* Tasks Container */
+.tasks-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.category-title {
+    font-size: 36px;
+    color: #E4281F;
+    margin-bottom: 28px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    font-family: "Georgia", serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Task List Items */
+#task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+#task-list li {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 20px 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+#task-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: #E4281F;
+    transition: width 0.3s ease;
+}
+
+#task-list li:hover {
+    transform: translateX(4px) translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+}
+
+#task-list li:hover::before {
+    width: 7px;
+}
+
+/* Task Content Area */
+.task-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Custom Elegant Checkbox */
+.task-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #E4281F;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.task-checkbox:checked {
+    background-color: #E4281F;
+    border-color: #E4281F;
+}
+
+.task-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FCEEC9;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.task-checkbox:hover {
+    transform: scale(1.08);
+    box-shadow: 0 2px 8px rgba(228, 40, 31, 0.2);
+}
+
+/* Task Text */
+.task-text {
+    font-size: 17px;
+    color: #333 !important;
+    font-weight: 600;
+    font-family: "Georgia", serif;
+    line-height: 1.4;
+    display: inline-block;
+    word-break: break-word;
+}
+
+.task-completed {
+    text-decoration: line-through;
+    color: #888 !important;
+    opacity: 0.65;
+}
+
+/* Task Action Buttons */
+.task-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.task-btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: "Georgia", serif;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: rgba(255, 190, 84, 0.2);
+    color: #6B2E1F;
+    border: 1px solid rgba(255, 190, 84, 0.4);
+}
+
+.edit-btn:hover {
+    background-color: #FFBE54;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 190, 84, 0.3);
+}
+
+.remove-btn {
+    background-color: rgba(228, 40, 31, 0.08);
+    color: #E4281F;
+    border: 1px solid rgba(228, 40, 31, 0.2);
+}
+
+.remove-btn:hover {
+    background-color: #E4281F;
+    color: #FCEEC9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(228, 40, 31, 0.3);
+}
+
+/* Achievement Popup - Bottom Center */
+#achievement-popup {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    color: #E4281F;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: "Georgia", serif;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: 1px solid rgba(228, 40, 31, 0.15);
+}
+
+#achievement-popup.show {
+    bottom: 30px;
+    opacity: 1;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6B2E1F;
+}
+
+.empty-state h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #E4281F;
+    font-family: "Georgia", serif;
+}
+
+.empty-state p {
+    font-size: 17px;
+    opacity: 0.8;
+    font-family: "Georgia", serif;
+}
+
+/* Task Modal (for add/edit) */
+.task-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+    max-width: 450px;
+    width: 90%;
+}
+
+.task-modal h3 {
+    margin: 0 0 20px 0;
+    color: #E4281F;
+    font-size: 26px;
+    font-weight: 800;
+    font-family: "Georgia", serif;
+}
+
+.task-modal input[type="text"],
+.task-modal textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    font-family: "Georgia", serif;
+    font-size: 15px;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.task-modal input:focus,
+.task-modal textarea:focus {
+    outline: none;
+    border-color: rgba(228, 40, 31, 0.7);
+    box-shadow: 0 4px 12px rgba(228, 40, 31, 0.1);
+}
+
+.task-modal button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background-color: #E4281F;
+    color: #FCEEC9;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-family: "Georgia", serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    font-size: 16px;
+}
+
+.task-modal button:hover {
+    background-color: #FFBE54;
+    color: #000;
+    transform: translateY(-1px);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 199;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+    text-align: center;
+    padding: 18px 12px;
+    color: #222;
+    font-weight: 600;
+    border-top: 1px solid rgba(0,0,0,0.04);
+    background: transparent;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 900px) {
+    .cards-container { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 18px; 
+    }
+    .app-name { 
+        font-size: 28px; 
+    }
+}
+
+@media (max-width: 768px) {
+    header,
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 18px;
+        border-radius: 0 0 14px 14px;
+    }
+    
+    .logo-title,
+    .header-left {
+        gap: 10px;
+    }
+    
+    .clover-logo {
+        width: 52px;
+        height: 52px;
+        padding: 5px;
+    }
+    
+    .app-name {
+        font-size: 26px;
+    }
+    
+    .header-right {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .welcome-msg,
+    .welcome-message {
+        font-size: 16px;
+    }
+    
+    .cards-container { 
+        grid-template-columns: 1fr; 
+        gap: 18px; 
+    }
+    
+    .category-card { 
+        min-height: 150px; 
+        padding: 16px; 
+    }
+    
+    .tasks-container {
+        padding: 0 18px;
+    }
+    
+    .category-title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    
+    #task-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 16px 18px;
+    }
+    
+    .task-content {
+        width: 100%;
+    }
+    
+    .task-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .circular-btn {
+        width: 58px;
+        height: 58px;
+        font-size: 2.3rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    .cards-container { 
+        grid-template-columns: 1fr; 
+        gap: 18px; 
+    }
+}
+
+@media (max-width: 480px) {
+    form { 
+        max-width: 94%; 
+        padding: 18px; 
+    }
+    
+    header,
+    .header {
+        padding: 12px 14px;
+    }
+    
+    .category-card { 
+        padding: 14px; 
+        min-height: 130px; 
+    }
+    
+    .card-desc { 
+        font-size: 15px; 
+    }
+    
+    .app-name { 
+        font-size: 22px; 
+    }
+    
+    .welcome-msg,
+    .welcome-message {
+        font-size: 14px;
+    }
+    
+    .logout-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .category-title {
+        font-size: 26px;
+    }
+    
+    .task-text {
+        font-size: 16px;
+    }
+    
+    .task-btn {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+    
+    .circular-btn {
+        width: 54px;
+        height: 54px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .category-card { 
+        padding: 14px; 
+        min-height: 130px; 
+    }
+    .card-desc { 
+        font-size: 15px; 
+    }
+}
+
+/* ===========================
+   ACCESSIBILITY
+   =========================== */
+a.logout-btn:focus,
+form button:focus,
+.auth-cta:focus,
+.card-desc:focus,
+.task-btn:focus,
+.circular-btn:focus,
+.task-modal button:focus {
+    outline: 2px solid #E4281F;
+    outline-offset: 2px;
+}
+
+.task-checkbox:focus {
+    outline: 2px solid #E4281F;
+    outline-offset: 2px;
+}
